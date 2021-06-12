@@ -8,23 +8,26 @@ var arr = [];
 for (var i = 0; i < 5;i++) {
     arr.push(Math.floor(Math.random() * 100) + 1);
 }
-
 // Da li parte un timer di 30 secondi.
 alert('questi sono i 5 numeri da ricordare: ' + arr);
-var secondi = 30;
+var secondi = 5;
 var timer = setInterval(function(){
     if (!secondi) {
         clearInterval(timer);
         // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+
         var count = 0;
         var arrRisposte = [];
         while(count < 5) {
             var numeroUtente = parseInt(prompt('dammi il numero '));
-            arrRisposte.push(numeroUtente);
-            count++;
+            if (!arrRisposte.includes(numeroUtente)) {
+                arrRisposte.push(numeroUtente);
+                count++;
+            } else {
+                alert('non puoi inserire due volte lo stesso numero... per favore inserisci un altro numero');
+            }
         }
         var risultato = controllaValori(arr,arrRisposte);
-        console.log(risultato);
         if (risultato) {
             alert('ti sei ricordato tutti i numeri.... BRAVO');
         } else {
