@@ -4,10 +4,7 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
 // Un alert() espone 5 numeri generati casualmente.
-var arr = [];
-for (var i = 0; i < 5;i++) {
-    arr.push(Math.floor(Math.random() * 100) + 1);
-}
+var arr = numRandUni(5,1,100);
 // Da li parte un timer di 30 secondi.
 alert('questi sono i 5 numeri da ricordare: ' + arr);
 var secondi = 5;
@@ -19,7 +16,7 @@ var timer = setInterval(function(){
         var count = 0;
         var arrRisposte = [];
         while(count < 5) {
-            var numeroUtente = parseInt(prompt('dammi il numero '));
+            var numeroUtente = parseInt(prompt('dammi un numero '));
             if (!arrRisposte.includes(numeroUtente)) {
                 arrRisposte.push(numeroUtente);
                 count++;
@@ -42,8 +39,18 @@ var timer = setInterval(function(){
 
 
 
-
-
+function numRandUni(lunghezza,min,max) {
+    var arr = [];
+    var j = 0;
+    while (j < lunghezza) {
+        var randomNumber = Math.floor((Math.random() * ((max + 1) - min) + min));
+        if (!arr.includes(randomNumber)) {
+            arr.push(randomNumber);
+            j++;
+        } 
+    }
+    return arr;
+}
 
 
 
