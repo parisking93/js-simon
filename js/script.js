@@ -16,7 +16,7 @@ var timer = setInterval(function(){
         var count = 0;
         var arrRisposte = [];
         while(count < 5) {
-            var numeroUtente = parseInt(prompt('dammi un numero '));
+            var numeroUtente = parseInt(prompt('dammi il ' + (count + 1) + '°' + ' numero '));
             if (!arrRisposte.includes(numeroUtente)) {
                 arrRisposte.push(numeroUtente);
                 count++;
