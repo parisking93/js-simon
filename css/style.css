@@ -1,3 +1,26 @@
+.container {
+    margin-top: 100px;
+}
 h1, #countdown, h4 {
     text-align: center;
+}
+#gioca {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 2px 10px;
+    background-color: lightblue;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px #add8e675;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+#gioca:hover {
+    background-color: #add8e675;
+    /* border: 2px solid #add8e675; */
+    box-shadow: 1px 1px 3px 5px #add8e675 inset;
+    cursor: pointer;
 }
