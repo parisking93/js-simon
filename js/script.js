@@ -10,7 +10,7 @@ document.getElementById('gioca').addEventListener('click', function(){
     var arr = numRandUni(5,1,100);
     // Da li parte un timer di 30 secondi.
     alert('questi sono i 5 numeri da ricordare: ' + arr);
-    var secondi = 3;
+    var secondi = 30;
     var stopGame = false; 
     var timer = setInterval(function(){
         if (!secondi) {
